@@ -220,7 +220,6 @@
     </div>
 
     <button id="btn-p2" class="btn blue">PART 2 · CHIA ĐƠN 1 LINE</button>
-    <button id="btn-both" class="btn indigo">BOTH · CHẠY TẤT CẢ PART 1 &amp; 2</button>
     <button id="btn-cancel" class="btn stop" style="display:none;">🛑 DỪNG LƯỢT ĐANG CHẠY TRÊN ĐÁM MÂY</button>
 
     <div style="font-size:11px;color:#475569;margin-top:6px;">
@@ -240,7 +239,7 @@
   </div>
 
   <script>
-    const ENCRYPTED_TOKEN = {"salt":"YSYrMo7Dbvhpw7MIWCmqcA==","iv":"IS1iGeCVHn0EZdNQ","data":"9PYc7aV/1PjGhoDKmAmJrwGGJqJecUSSgwg+Cnt46tLfFFrOw6N6z9ji8jUUTRbnHMxqCEXiEUo="};
+    const ENCRYPTED_TOKEN = {"salt":"nt/ytLEH4+SGJUvch3liZw==","iv":"vrlpg2L9pFM6kV+W","data":"Gq3rlHjf5JvwAoA2AyVTRjnJjRbSgPK1o+GB66m7PBNligt3KL4Cnw4wAkgT6ApGl5mPhw+PI+Y="};
     const OWNER = "changcanno1";
     const REPO = "swifthub-wms-automation";
     const STORAGE_KEY = "swifthub_cloud_pin_v1";
@@ -351,7 +350,6 @@
 
           document.getElementById("btn-p1").disabled = isRunning;
           document.getElementById("btn-p2").disabled = isRunning;
-          document.getElementById("btn-both").disabled = isRunning;
 
           if (isRunning) {
             headlineEl.textContent = `⏳ Đang chạy lượt #${latestRun.run_number} trên đám mây...`;
@@ -444,10 +442,6 @@
 
     document.getElementById("btn-p2").addEventListener("click", () => {
       triggerWorkflow("Part 2: Chia đơn 1 Line");
-    });
-
-    document.getElementById("btn-both").addEventListener("click", () => {
-      triggerWorkflow("Both: Chạy tất cả Part 1 & 2");
     });
 
     document.getElementById("btn-cancel").addEventListener("click", async () => {
